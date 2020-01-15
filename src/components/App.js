@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../stylesheet/App.css';
-import { fetchAllCharacters } from '../services/Api.js'
+import { fetchAllCharacters } from '../services/Api.js';
+import Header from './Header';
+import CharacterList from './CharacterList';
 
 class App extends Component {
   constructor(props){
@@ -8,10 +10,8 @@ class App extends Component {
     
     this.state = {
       allCharacters: [],
-      value: '',
     }
   }
-
   componentDidMount() {
     fetchAllCharacters()
       .then(characters => {
@@ -24,7 +24,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Probando...
+        <Header/>
+        <CharacterList allCharacters={this.state.allCharacters}/>
       </div>
     );
   }
