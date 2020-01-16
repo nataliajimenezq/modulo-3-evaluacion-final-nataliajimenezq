@@ -36,8 +36,7 @@ class App extends Component {
     })
   }
 
-  renderCharacterDetail(props) {
-      
+  renderCharacterDetail(props) {    
    const routeId = parseInt(props.match.params.id);
   
     return(

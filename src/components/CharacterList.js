@@ -9,7 +9,7 @@ const CharacterList = props => {
   return <ul className='list__container'>
     {props.allCharacters
       .filter(characters => props.value === '' || characters.name.toLowerCase().includes(props.value.toLowerCase()))
-      .map((characters) => <li key={characters.id}>
+      .map((characters) => <li key={characters.id} className="card__container">
         <Link
           to={`/characters/${characters.id}`}>
           <CharacterCard

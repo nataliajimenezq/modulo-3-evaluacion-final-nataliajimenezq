@@ -8,9 +8,8 @@ const Search =props=>{
   const handleChange = (evt)=>{
     props.handleChange(evt.target.value)
   }
-
   return <form>
-    <input onChange={handleChange} type="text"  value={props.value}/>
+    <input onChange={handleChange} type="text" value={props.value} className="input"/>
   </form>
 }
 
