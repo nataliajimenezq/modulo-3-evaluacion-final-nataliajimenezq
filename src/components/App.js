@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.renderCharacterDetail=this.renderCharacterDetail.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.state = {
       allCharacters: [],
       value: ''
@@ -37,15 +37,14 @@ class App extends Component {
   }
 
   renderCharacterDetail(props) {
-    console.log(props)
-    const id = props.match.params.id;
-    console.log(id)
-    return (
+      
+   const routeId = parseInt(props.match.params.id);
+  
+    return(
     <CharacterDetail 
-    
-    />)
-  }
-
+    singleCharacter={this.state.allCharacters.find(character=>character.id ===routeId)}
+    />
+    );}
 
   render() {
     console.log(this.state.value)
@@ -60,7 +59,7 @@ class App extends Component {
               value={this.state.value}
             />
           </Route>
-          <Route path="/character:id" render={this.renderCharacterDetail}/>
+          <Route path="/characters/:id" render={this.renderCharacterDetail} />
         </Switch>
       </div>
     );

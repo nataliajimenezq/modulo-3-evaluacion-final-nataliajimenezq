@@ -1,26 +1,25 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
   const CharacterDetail = props => {
-    const { imgUrl, name, status, species, origin, episodes } = props.characters;
+
 
     return (
-        <div>
-          <img src={imgUrl} alt={`${name} avatar`} />
-          <div>
-            <h2>{name}</h2>
-            <span>Status: </span>{status}
-            <span>Species: </span>{species}
-            <span>Origin: </span>{origin}
-            <span>Episodes: </span>{episodes}
-          </div>
+        <div className="card__container">
+          <img src={props.singleCharacter.image} alt={`${props.singleCharacter.name} avatar`} />
+
+            <h2>{props.singleCharacter.name}</h2>
+            <div>
+            <span>Status:{props.singleCharacter.status}</span>
+            <span>Species: {props.singleCharacter.species}</span>
+            {/* <span>Origin: {props.singleCharacter.origin}</span> */}
+            {/* <span>Episodes: {props.singleCharacter.episodes}</span>  */}
+            </div>
+          
         </div>
     
     )
   }
 
-
-
-
-
-
 export default CharacterDetail;
+
