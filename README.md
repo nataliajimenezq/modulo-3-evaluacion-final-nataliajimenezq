@@ -1,4 +1,4 @@
-Ejercicio de evaluación final Adalab.
+Ejercicio de evaluación final del último modulo del Bootcamp en Adalab Digital.
 Modulo 3
 
 Listado de personajes de Rick and Morty.
